@@ -1,1 +1,20 @@
-<p>character-list works!</p>
+<section class="container content">
+    <div class="page-header row">
+        <div class="col">
+            <h2 class="page-title">Início</h2>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" (input)="handleSearchInput($event.target)" placeholder="Pesquisar"
+                aria-label="Campo de pesquisa">
+        </div>
+    </div>
+    <app-no-results *ngIf="hasCharacters()" [title]="'Nada foi encontrado'"
+        [message]="'Tente realizar uma nova busca.'">
+    </app-no-results>
+    <div class="row" infinite-scroll [infiniteScrollDistance]="scrollDistance" [infiniteScrollThrottle]="throttle"
+        (scrolled)="onScrollDown()">
+        <div class="col col-lg-4 col-md-6 col-sm-12 mb-3" *ngFor="let character of characters; trackBy : trackById">
+            <app-card [character]="character"></app-card>
+        </div>
+    </div>
+</section>

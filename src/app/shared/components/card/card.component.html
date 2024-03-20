@@ -1,1 +1,10 @@
-<p>card works!</p>
+<div class="card mx-auto" [ngClass]="{'active': isFavorite(character)}">
+    <img [src]="character.image" class="card-img-top" [alt]="character.name">
+    <div class="card-body">
+        <h3 class="title card-title">{{character.name}}</h3>
+        <h5 class="message card-text">{{character.species}}</h5>
+    </div>
+    <button class="btn btn-link btn-favorite" (click)="toggleFavorite(character)">
+        <i class="fa-heart fa-lg" [ngClass]="{'far': !isFavorite(character), 'fas': isFavorite(character)}"></i>
+    </button>
+</div>

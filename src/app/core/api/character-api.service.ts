@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class CharacterApiService {
 
   readonly API = `${environment.baseUrl}/character`;
@@ -12,9 +12,5 @@ export class CharacterApiService {
 
   list(search: string, nextUrl: string = this.API): Observable<any> {
     return this.http.get<any>(nextUrl, { params: { name: search } });
-  }
-
-  read(id: number): Observable<any> {
-    return this.http.get<any>(this.API, { params: { id } });
   }
 }

@@ -1,2 +1,160 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.min.css";
+
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+@import "~bootstrap/scss/_functions";
+@import "~bootstrap/scss/_variables";
+
+$dark: #0A0A0A;
+$bg-dark: #1F1F1F;
+$gray: #3D3D3D;
+$light-gray: #A4A4A4;
+$white-egg: #FAFAFA;
+$white: #FFFFFF;
+$logo-bg: #00B5CC;
+$logo-border: #B2DF28;
+
+$body-bg: $bg-dark;
+$body-color: $white-egg;
+
+$theme-colors: (
+    "dark": $dark,
+);
+
+$border-radius: 12px;
+
+@import "~bootstrap/scss/_maps";
+@import "~bootstrap/scss/_mixins";
+@import "~bootstrap/scss/_root";
+@import '~bootstrap/scss/bootstrap';
+
+.app-header {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+.bg-dark {
+    background-color: $dark;
+}
+
+.badge {
+    background-color: $white;
+    border: 1px solid $gray;
+    color: $dark;
+}
+
+.btn {
+    font-weight: 600;
+}
+
+.btn-dark {
+    border-color: $gray;
+}
+
+.btn-dark.active {
+    background-color: $white;
+    color: $dark;
+}
+
+.btn-light {
+    background-color: $white;
+    border-color: $gray;
+    color: $dark;
+}
+
+.btn-light:hover {
+    background-color: none;
+    border-color: $gray;
+    color: $white;
+}
+
+.btn-favorite {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: $white-egg;
+}
+
+.btn-favorite:hover,
+.btn-favorite:active {
+    color: $dark !important;
+}
+
+.card {
+    background-color: $dark;
+    border-color: $gray;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: $white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease;
+}
+
+.card.active::before {
+    transform: translate(-50%, -50%) scale(10);
+}
+
+.card.active .btn-favorite {
+    color: $dark !important;
+}
+
+h3.card-title {
+    font-family: Creepster, sans-serif !important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.page-header {
+    margin: 32px 0;
+}
+
+.page-header.row>.col {
+    padding: 0;
+}
+
+.box {
+    background-color: $dark;
+    border: 1px solid $gray;
+    border-radius: $border-radius;
+    height: 60vh;
+    padding: 0 16px;
+}
+
+h3.title {
+    font-weight: 700;
+    color: $white-egg;
+}
+
+h5.message {
+    font-weight: 400;
+    color: $light-gray;
+}
+
+h2.page-title {
+    font-family: Creepster, sans-serif !important;
+    font-size: 48px;
+    color: $logo-bg;
+    text-shadow: -1px 0 $logo-border, 0 1px $logo-border, 1px 0 $logo-border, 0 -1px $logo-border;
+}
+
+.container {
+    max-width: 964px;
+    padding: 0 32px;
+}
+
+.container.content {
+    padding-top: 74px;
+}

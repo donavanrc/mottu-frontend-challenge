@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { FavoritesFacadeService } from 'src/app/core/facade/favorites-facade.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  favoriteCount$: Observable<number>;
+
+  constructor(
+    public router: Router,
+    private favoritesFacade: FavoritesFacadeService
+  ) {
+    this.favoriteCount$ = this.favoritesFacade.getFavoriteCount();
+  }
 
   ngOnInit(): void {
+
   }
 
 }

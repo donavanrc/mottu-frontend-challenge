@@ -1,1 +1,31 @@
-<p>header works!</p>
+<header class="app-header">
+    <nav class="navbar navbar-expand-lg navbar bg-dark p-0">
+        <div class="container-fluid">
+            <a class="navbar-brand" [routerLink]="['/']">
+                <img src="assets/images/logo.png" width="114" height="64" alt="Logo">
+            </a>
+            <div>
+                <!-- Botões visíveis em resoluções maiores -->
+                <div class="btn-group d-none d-lg-inline" role="group">
+                    <button class="btn btn-dark" [routerLink]="['/']" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{ exact: true }"><i class="fas fa-home"></i> Início</button>
+                    <button class="btn btn-dark" [routerLink]="['favorites']" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{ exact: true }">
+                        <i class="fas fa-heart"></i> Favoritos
+                        <span class="badge text-bg-light">{{favoriteCount$ | async}}</span>
+                    </button>
+                </div>
+                <!-- Ícones e contadores visíveis em resoluções menores -->
+                <div class="btn-group d-lg-none d-inline" role="group">
+                    <button class="btn btn-dark" [routerLink]="['/']" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{ exact: true }"><i class="fas fa-home"></i></button>
+                    <button class="btn btn-dark" [routerLink]="['favorites']" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{ exact: true }">
+                        <i class="fas fa-heart"></i>
+                        <span class="badge text-bg-light mx-1">{{favoriteCount$ | async}}</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

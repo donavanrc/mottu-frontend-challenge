@@ -1,1 +1,13 @@
-<p>favorite-list works!</p>
+<section class="container content">
+    <div class="page-header">
+        <h2 class="page-title">Favoritos</h2>
+    </div>
+    <app-no-results *ngIf="hasFavorites()" [title]="'Parece que você ainda não tem favoritos'"
+        [message]="'Volte à página inicial e escolha os melhores para você.'" [showHomeButton]="true">
+    </app-no-results>
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-3" *ngFor="let favorite of favorites; trackBy : trackById">
+            <app-card [character]="favorite"></app-card>
+        </div>
+    </div>
+</section>
