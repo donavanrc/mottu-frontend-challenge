@@ -6,7 +6,6 @@ import { CharacterListComponent } from './character-list/character-list.componen
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { SharedModule } from 'src/app/shared/shared.module';
 
-
 @NgModule({
   declarations: [
     CharacterListComponent,

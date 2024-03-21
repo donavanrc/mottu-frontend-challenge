@@ -1,0 +1,19 @@
+@import "src/styles/variables.scss";
+
+.app-header {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+.bg-dark {
+  background-color: $dark;
+}
+
+.badge {
+  background-color: $white;
+  border: 1px solid $gray;
+  color: $dark;
+}

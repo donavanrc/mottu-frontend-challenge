@@ -4,8 +4,7 @@
             <h2 class="page-title">Início</h2>
         </div>
         <div class="col">
-            <input type="text" class="form-control" (input)="handleSearchInput($event.target)" placeholder="Pesquisar"
-                aria-label="Campo de pesquisa">
+          <app-input (input)="handleSearchInput($event.target)"></app-input>
         </div>
     </div>
     <app-no-results *ngIf="hasCharacters()" [title]="'Nada foi encontrado'"

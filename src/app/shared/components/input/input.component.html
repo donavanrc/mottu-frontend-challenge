@@ -1,0 +1,8 @@
+<div class="form-group">
+  <input type="text" class="form-control"
+  [(ngModel)]="inputValue"
+  (focus)="onFocus()" (blur)="onBlur()" (input)="onInput($event)"
+  aria-label="Campo de pesquisa">
+  <label class="input-placeholder"
+    [ngClass]="{'focused': isFocused }">Pesquisar</label>
+</div>

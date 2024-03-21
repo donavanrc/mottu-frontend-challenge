@@ -1,0 +1,23 @@
+.page-header {
+  margin: 2rem 0;
+}
+
+.page-header.row>.col {
+  padding: 0;
+}
+
+h2.page-title {
+  font-family: Creepster, sans-serif !important;
+  font-size: 48px;
+  color: $logo-bg;
+  text-shadow: -1px 0 $logo-border, 0 1px $logo-border, 1px 0 $logo-border, 0 -1px $logo-border;
+}
+
+.container {
+  max-width: 964px;
+  padding: 0 32px;
+}
+
+.container.content {
+  padding-top: 74px;
+}

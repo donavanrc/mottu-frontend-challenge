@@ -1,0 +1,25 @@
+.btn {
+  font-weight: 600;
+}
+
+.btn-dark {
+  border-color: $gray;
+  color: #A4A4A4;
+}
+
+.btn-dark.active {
+  background-color: $white;
+  color: $dark;
+}
+
+.btn-light {
+  background-color: $white;
+  border-color: $gray;
+  color: $dark;
+}
+
+.btn-light:hover {
+  background-color: none;
+  border-color: $gray;
+  color: $white;
+}

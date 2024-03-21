@@ -1,0 +1,19 @@
+@import "src/styles/variables.scss";
+
+.box {
+  background-color: $dark;
+  border: 1px solid $gray;
+  border-radius: $border-radius;
+  height: 60vh;
+  padding: 0 1rem;
+}
+
+h3.title {
+  font-weight: 700;
+  color: $white-egg;
+}
+
+h5.message {
+  font-weight: 400;
+  color: $light-gray;
+}
